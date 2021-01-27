@@ -1,15 +1,23 @@
 class Bus{
-	constructor(line, towards, time) {
+	constructor(station, line, towards, time) {
+		this.station = station;
 		this.line = line;
 		this.towards = towards;
 		this.time = time;
 	}
 
 	showTestData() {
-//		return this.name + ", id: " + this.id; 
-        return this.line + " towards " + this.towards + " in " + this.time + " seconds"
-//console.log(`${bus.line} towards ${bus.towards} : ${toMinutes(bus.time)}`))
+        return this.line + " towards " + this.towards + ": " + toMinutes(this.time) 
+		function toMinutes(seconds){
+			if (Math.floor(seconds / 60) >= 1){return `${Math.floor(seconds/60)} mins`
+			} else{return 'due'}
+		}
 	};
+
+	showHeader()
+	{
+		return "Bus Stop : " + this.station
+	}
 
 	// editName(newName) {
 	// 	this.name = newName

@@ -8,13 +8,21 @@
 </head>
 
 <body id="home">
-	<h1>MVC example</h1>
-	<ul>
-		<%
-			topBus.forEach((bus) => { %>
+	<h1>Bus Details for your postcode</h1>
+	<h2><%=topBus[0].showHeader()%></h2>
+	<ol>
+		<%topBus.forEach((bus) => { %>
 			<li><b><%= bus.showTestData() %></b></li>
 		<% });
 		%>
-	</ul>
+	</ol>
+	<h2><%=topBus2[0].showHeader()%></h2>
+	<ol>
+		<%
+			topBus2.forEach((bus) => { %>
+			<li><b><%= bus.showTestData() %></b></li>
+		<% });
+		%>
+	</ol>
 </body>
 </html>
